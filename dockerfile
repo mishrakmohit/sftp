@@ -2,8 +2,7 @@ FROM alpine
 
 EXPOSE 22
 
-RUN adduser --system -s /bin/bash git
-
+RUN adduser -S git -u 1000
 RUN apk add --no-cache openssh
 COPY ./sshd_config /etc/ssh/
 COPY ./start.sh /usr/bin/
